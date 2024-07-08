@@ -18,16 +18,15 @@ pipeline {
     }
 
     stages {
-        stages {
-            stage('print the version'){
-                steps{
-                    script{
-                        echo "Application version: ${params.appVersion}"
-                    }
+        stage('print the version'){
+            steps{
+                script{
+                    echo "Application version: ${params.appVersion}"
                 }
             }
         }
     }
+    
     post { 
         always { 
             echo 'I will always say Hello again!'
