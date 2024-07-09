@@ -27,3 +27,7 @@ variable "zone_name" {
     default = "expensesnote.site"
   
 }
+
+variable "app_version" {
+  
+}
