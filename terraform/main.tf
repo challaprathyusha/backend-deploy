@@ -66,11 +66,9 @@ resource "aws_ami_from_instance" "backend" {
 #null resource and local exec to terminate the backend server which is in stopped state
 resource "null_resource" "backend_delete" {
     triggers = {
-      # this will be triggered everytime instance is created
       instance_id = module.backend.id 
     }
-
-#local-exec provisioner to terminate the backend server in aws 
+    
     provisioner "local-exec" {
         command = "aws ec2 terminate-instances --instance-ids ${module.backend.id}"
     } 
